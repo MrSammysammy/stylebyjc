@@ -143,3 +143,19 @@ if (sections.length > 0 && navItems.length > 0) {
   window.addEventListener("scroll", activateNavOnScroll);
   activateNavOnScroll();
 }
+/* IMAGE LOAD ANIMATION */
+
+const images = document.querySelectorAll("img");
+
+images.forEach((img) => {
+  if (img.complete) {
+    img.classList.add("loaded");
+  } else {
+    img.addEventListener("load", () => {
+      img.classList.add("loaded");
+    });
+  }
+});
+window.addEventListener("load", () => {
+  document.body.classList.add("loaded");
+});
